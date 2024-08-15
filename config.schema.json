@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fogshot/schatzmeister/config.schema.json",
+  "title": "Config",
+  "description": "Configuration for the schatzmeister CLI app.",
+  "type": "object",
+  "properties": {
+    "input": {
+      "type": "object",
+      "properties": {
+        "csvDelimiter": {
+          "type": "string",
+          "pattern": "[;,\t| ]"
+        },
+        "decimalSeparator": {
+          "type": "string",
+          "pattern": "[,.]"
+        },
+        "dateLayout": {
+          "type": "string",
+          "default": "02.01.2006",
+          "description": "A layout string representing the reference time used in the Go time package."
+        },
+        "location": {
+          "type": "string",
+          "default": "Europe/Berlin",
+          "description": "The location used when parsing time."
+        },
+        "knownPayees": {
+          "type": "object",
+          "patternProperties": {
+            "^.+$": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "dateLayout": {
+          "type": "string",
+          "default": "2006-01-02",
+          "description": "A layout string representing the reference time used in the Go time package."
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

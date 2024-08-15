@@ -1,0 +1,15 @@
+{
+  "input": {
+    "csvDelimiter": ";",
+    "dateLayout": "02.01.2006",
+    "decimalSeparator": ",",
+    "location": "Europe/Berlin",
+    "knownPayees": {
+      "Max Mustermann": ["Max Mustermann", "Mustermann, Max"],
+      "ACME Corporation": ["ACME Corporation", "ACME Inc."]
+    }
+  },
+  "output": {
+    "dateLayout": "2006-01-02"
+  }
+}
